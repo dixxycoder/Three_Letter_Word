@@ -79,6 +79,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="9N8-QF-a0e" appends="YES" id="occ-Fl-cI9"/>
+                                        </connections>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -91,8 +95,21 @@
                             <constraint firstItem="tOj-qQ-Lfe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="Xzr-of-XGF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="a_Label" destination="avj-ZN-IpM" id="tUb-tB-TTE"/>
+                        <outlet property="currentLetterLabel" destination="3jz-CA-R9i" id="cXn-TH-6da"/>
+                        <outlet property="horanzoltleView" destination="lNb-i4-0Ne" id="eH9-DT-Zyi"/>
+                        <outletCollection property="letterLabels" destination="ljY-a4-kob" collectionClass="NSMutableArray" id="hEF-gL-zSn"/>
+                        <outletCollection property="letterLabels" destination="32I-xo-MqC" collectionClass="NSMutableArray" id="QHF-fU-IHc"/>
+                        <outletCollection property="letterLabels" destination="WeT-jY-5kj" collectionClass="NSMutableArray" id="sfb-4B-epV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="9N8-QF-a0e">
+                    <connections>
+                        <action selector="tapLetter:" destination="BYZ-38-t0r" id="87i-YQ-VnE"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="30" y="53"/>
         </scene>
