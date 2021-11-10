@@ -1,9 +1,9 @@
-//
-//  ViewController.swift
-//  Three_Letter_Word
-//
-//  Created by Grant Spraker on 11/4/21.
-//
+/*
+  ViewController.swift
+  Three_Letter_Word
+
+  Created by Grant Spraker on 11/4/21.
+*/
 
 import UIKit
 
@@ -23,11 +23,6 @@ class ViewController: UIViewController
     var i = 0
     var currentLetter = "a"
     
-    
-//    var letter1 = ""
-//    var letter2 = ""
-//    var letter3 = ""
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -35,9 +30,43 @@ class ViewController: UIViewController
 
     @IBAction func tapLetter(_ sender: UITapGestureRecognizer)
     {
+        //Initialize Current Letter & Label
         currentLetter = alphubet[i]
         
-        currentLetterLabel.text = currentLetter
+        a_Label.text = currentLetter
+        
+        //Reconized where the user is tapping
+        let selectedPoint = sender.location(in: horanzoltleView)
+        
+        for label in letterLabels
+        {
+            if
+                label.frame.contains(selectedPoint)
+            {
+                label.text = "\(currentLetter)"
+            }
+        }
+        
+        i += 1
+        
+        if i == 26
+        {
+            i = 0
+            currentLetter = alphubet[i] // good
+            currentLetterLabel.text = currentLetter
+            for label in
+                self.letterLabels
+            {
+                label.text = "?"
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
     }
     
 }
